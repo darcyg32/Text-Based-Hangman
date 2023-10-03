@@ -10,10 +10,19 @@ using namespace std;
 // Global variables
 string correctWord;
 string currentWord;
-string incorrectGuesses = "";
-int numIncorrectGuesses = 0;
+string incorrectGuesses;
+int numIncorrectGuesses;
 int numGuessesAllowed = 7;
 char currentLetterGuess;
+
+void initialize() {
+    incorrectGuesses = "";
+    numIncorrectGuesses = 0;
+    
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    cout << "Welcome to Hangman! Guess lowercase letters and try to solve the word in 7 guesses or less!\n";
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+}
 
 void setCorrectWord() {
     // Initialize vector of words
@@ -121,9 +130,7 @@ void displayLose() {
 
 int main() {
 
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-    cout << "Welcome to Hangman! Guess lowercase letters and try to solve the word in 7 guesses or less!\n";
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    initialize();
 
     int gameOver = false;
     setCorrectWord();

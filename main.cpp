@@ -14,6 +14,63 @@ string incorrectGuesses;
 int numIncorrectGuesses;
 int numGuessesAllowed = 7;
 char currentLetterGuess;
+vector<string> hangmanStates = {
+    "+----+\n"
+    "|\n"
+    "|\n"
+    "|\n"
+    "|\n"
+    "|\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|\n"
+    "|\n"
+    "|\n"
+    "|\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|    O\n"
+    "|\n"
+    "|\n"
+    "|\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|    O\n"
+    "|    |\n"
+    "|    |\n"
+    "|\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|    O\n"
+    "|    |\n"
+    "|    |\n"
+    "|   /\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|    O\n"
+    "|    |\n"
+    "|    |\n"
+    "|   / \\\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|    O\n"
+    "|   /|\n"
+    "|    |\n"
+    "|   / \\\n",
+
+    "+----+\n"
+    "|    |\n"
+    "|    O\n"
+    "|   /|\\\n"
+    "|    |\n"
+    "|   / \\\n",
+};
 
 void initialize() {
     incorrectGuesses = "";
@@ -56,6 +113,7 @@ void setCorrectWord() {
 }
 
 void displayCurrentState() {
+    std::cout << hangmanStates[numIncorrectGuesses];
     std::cout << currentWord; 
     if (numIncorrectGuesses > 0) {
         std::cout << " | Incorrect Guesses: ";
@@ -124,6 +182,7 @@ void displayWin() {
 
 void displayLose() {
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    std::cout << hangmanStates[7];
     std::cout << "You ran out of guesses! It was " << correctWord << "! You lose!\n";
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 }

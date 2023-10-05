@@ -182,7 +182,7 @@ void displayWin() {
 
 void displayLose() {
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-    std::cout << hangmanStates[7];
+    std::cout << hangmanStates[numGuessesAllowed];
     std::cout << "You ran out of guesses! It was " << correctWord << "! You lose!\n";
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 }
